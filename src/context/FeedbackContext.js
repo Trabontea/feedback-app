@@ -1,17 +1,34 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import FeedbackData from "../data/FeedbackData";
 
 const FeedbackContext = createContext();
 
 export const FeedbackProvider = ({ children }) => {
-  const [feedback, setFeedback] = useState(FeedbackData);
+  const [feedback, setFeedback] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const [feedbackEdit, setFeedbackEdit] = useState({
     // item este de fapt feedback
     item: {},
     edit: false,
   });
+
+  useEffect(() => {
+    fetchFeedback();
+  }, []);
+
+  const url = "http://localhost:5000/feedback?_sort=id&_order=desc";
+
+  // Fetch Feedback
+  const fetchFeedback = async () => {
+    const response = await fetch(url);
+    const data = await response.json();
+
+    //console.log(data);
+    setFeedback(data);
+    setIsLoading(false);
+  };
 
   // Add feedback
   const addFeedback = (newFeedback) => {
@@ -54,6 +71,7 @@ export const FeedbackProvider = ({ children }) => {
         editFeedback,
         feedbackEdit, // piece of state
         updateFeedback,
+        isLoading
       }}
     >
       {children}
