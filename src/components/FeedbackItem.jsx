@@ -7,11 +7,12 @@ import FeedbackContext from '../context/FeedbackContext'
 
 
 function FeedbackItem({item }) {
+  console.log('item', parseInt(item.rating))
 
   const {deleteFeedback, editFeedback} = useContext(FeedbackContext)
   return (
     <Card>
-      <div className="num-display">{item.rating}</div>
+      <div className="num-display">{parseInt(item.rating)}</div>
       <button  className='edit'  onClick={() => editFeedback(item)}>
         <FaEdit color='purple'/>
       </button>

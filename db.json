@@ -1,24 +1,44 @@
 {
   "feedback": [
     {
-      "id": "1",
+      "id": 1,
       "rating": 10,
       "text": "Feedback no 1"
     },
     {
-      "id": "2",
+      "id": 2,
       "rating": 9,
       "text": "Feedback no 2"
     },
     {
-      "id": "3",
+      "id": 3,
       "rating": 9,
       "text": "Feedback no 3"
     },
     {
-      "rating": "9",
-      "text": "new feedback 4",
-      "id": "f6l6k9s"
+      "id": 4,
+      "rating": 9,
+      "text": "new feedback 4"
+    },
+    {
+      "id": 5,
+      "rating": 6,
+      "text": "new feedback 5"
+    },
+    {
+      "text": "new feedback 6 ii UPDATED --",
+      "rating": 10,
+      "id": 6
+    },
+    {
+      "rating": "7",
+      "text": "new feedback 6 ii",
+      "id": 7
+    },
+    {
+      "rating": "6",
+      "text": "new feedback 8 ii",
+      "id": 8
     }
   ]
 }
